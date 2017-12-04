@@ -37,11 +37,39 @@ with open('words_alpha.txt', 'r') as f:
 # 3494678 total characters
 
     words_without_e = 0
-    for letters in words:
-        if letter != "e":
-            words_without_e += 1
+    for w in words:
+        for letter in w:
+            if letter != "e":
+                words_without_e += 1
     print(words_without_e)
     print("words witout the letter e")
     print()
-# 
+# 3118224 wrong
 
+    begin_and_end = 0
+    for letters in words:
+        if letters[0] == letters[-1]:
+            begin_and_end += 1
+    print(begin_and_end)
+    print("Words that beginand end in the same letetr")
+    print()
+# 20558
+
+    has_3_As = 0
+    for w in words:
+        for letters in w:
+            if w == 'a' * 3:
+                has_3_As += 1
+    print(has_3_As)
+    print("Words that have 3 A's")
+    print()
+# wrong
+
+    Q_not_Qu = 0
+    for w in words:
+        if w[0] == 'q' and w[:1] != "qu":
+            Q_not_Qu += 1
+    print(Q_not_Qu)
+    print("Words that start with Q but not Qu")
+    print()
+# wrong
