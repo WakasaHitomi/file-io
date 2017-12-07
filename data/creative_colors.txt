@@ -1,0 +1,12 @@
+Creative Colors
+red
+orange
+blue
+yellow
+green
+brown
+purple
+pink
+periwinkle
+magenta
+cyan
