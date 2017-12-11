@@ -2,6 +2,7 @@
 #Cupid's Arrow
 #Dammorah J.
 
+import os
 import random
 limit = 8
 
@@ -22,7 +23,7 @@ def start_screen():
     print("                  :::..O              ooo")
     print("                    ::.              oooo ")
     print("                     :                    ")
-    print(" ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄  \\  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ")
+    print(" ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄  \   ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ")
     print("▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌    ▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌ ")
     print("▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌   ▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌ ")
     print("▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌       ▐░▌   ▐░▌               ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌")
@@ -44,10 +45,34 @@ def start_screen():
     print(" ")
 
 def get_puzzle():
-    puzzle = ["velocity", "heart", "insanity", "disaster", "tragedy", "misery", "hope", "depression", "embrace", "romance", "cherrish", "butterflies"]
-    return puzzle[random.randint(0,11)]
+    path = "data"
+
+    file_names = os.listdir(path)
+
+    for i, f in enumerate(file_names):
+        print(str(i) + ") " + f)
+
+    choice = input("pick one")
+    choice = int(choice)
+
+    file = path + "/" + file_names[choice]
+    print(file)
+
+    with open(file, 'r') as f:
+        lines = f.read().splitlines()
+
+    print(lines)
+
+    category_name = lines[0]
+    puzzle = random.choice( lines[1:] )
+
+    print(category_name)
+    print(puzzle)
+
+    puzzle = (puzzle)
     print("")
     print("")
+    
 def get_solved(puzzle, guesses):
     solved = ""
 
@@ -130,103 +155,32 @@ def play_again():
 
 def mistakes(strikes, limit):
     if strikes == 0:
-        print(",d88b.d88b,  ,d88b.d88b, ,d88b.d88b, ,d88b.d88b, ,d88b.d88b,  ,d88b.d88b,  ,d88b.d88b,  ,d88b.d88b,     ")
-        print("88888888888  88888888888 88888888888 88888888888 88888888888  88888888888  88888888888  88888888888  ")
-        print("`Y8888888Y'  `Y8888888Y' `Y8888888Y' `Y8888888Y' `Y8888888Y'  `Y8888888Y'  `Y8888888Y'  `Y8888888Y' ")
-        print("  `Y888Y'      `Y888Y'     `Y888Y'     `Y888Y'     `Y888Y'      `Y888Y'      `Y888Y'      `Y888Y'  ")
-        print("    `Y'          `Y'         `Y'         `Y'         `Y'          `Y'          `Y'          `Y'  ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 8 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file that opens"""
         
     if strikes == 1:
-        print(",d88b.d88b,  ,d88b.d88b, ,d88b.d88b, ,d88b.d88b, ,d88b.d88b,  ,d88b.d88b,  ,d88b.d88b, |,d88b/ /d88b,     ")
-        print("88888888888  88888888888 88888888888 88888888888 88888888888  88888888888  88888888888 |88888\ \88888  ")
-        print("`Y8888888Y'  `Y8888888Y' `Y8888888Y' `Y8888888Y' `Y8888888Y'  `Y8888888Y'  `Y8888888Y' |`Y888/ /888Y' ")
-        print("  `Y888Y'      `Y888Y'     `Y888Y'     `Y888Y'     `Y888Y'      `Y888Y'      `Y888Y'   |  `Y8\ \8Y'  ")
-        print("    `Y'          `Y'         `Y'         `Y'         `Y'          `Y'          `Y'     |     `Y'  ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 7 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file insert"""
 
     if strikes == 2:
-        print(",d88b.d88b,  ,d88b.d88b, ,d88b.d88b, ,d88b.d88b, ,d88b.d88b,  ,d88b.d88b,  |,d88b/ /d88b, ,d88b/ /d88b,    ")
-        print("88888888888  88888888888 88888888888 88888888888 88888888888  88888888888  |88888\ \88888 88888\ \88888 ")
-        print("`Y8888888Y'  `Y8888888Y' `Y8888888Y' `Y8888888Y' `Y8888888Y'  `Y8888888Y'  |`Y888/ /888Y' `Y888/ /888Y'")
-        print("  `Y888Y'      `Y888Y'     `Y888Y'     `Y888Y'     `Y888Y'      `Y888Y'    |  `Y8\ \8Y'     `Y8\ \8Y' ")
-        print("    `Y'          `Y'         `Y'         `Y'         `Y'          `Y'      |     `Y'           `Y' ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 6 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file insert"""
 
     if strikes == 3:
-        print(",d88b.d88b,  ,d88b.d88b, ,d88b.d88b, ,d88b.d88b, ,d88b.d88b,  |,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,   ")
-        print("88888888888  88888888888 88888888888 88888888888 88888888888  |88888\ \88888 88888\ \88888  88888\ \88888 ")
-        print("`Y8888888Y'  `Y8888888Y' `Y8888888Y' `Y8888888Y' `Y8888888Y'  |`Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y' ")
-        print("  `Y888Y'      `Y888Y'     `Y888Y'     `Y888Y'     `Y888Y'    |  `Y8\ \8Y'     `Y8\ \8Y'     `Y8\ \8Y'")
-        print("    `Y'          `Y'         `Y'         `Y'         `Y'      |     `Y'           `Y'           `Y' ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 5 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file insert"""
 
     if strikes == 4:
-        print(",d88b.d88b,  ,d88b.d88b, ,d88b.d88b, ,d88b.d88b, |,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b,  ")
-        print("88888888888  88888888888 88888888888 88888888888 |88888\ \88888 88888\ \88888  88888\ \88888  88888\ \88888 ")
-        print("`Y8888888Y'  `Y8888888Y' `Y8888888Y' `Y8888888Y' |`Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y' ")
-        print("  `Y888Y'      `Y888Y'     `Y888Y'     `Y888Y'   |  `Y8\ \8Y'     `Y8\ \8Y'     `Y8\ \8Y'       `Y8\ \8Y' ")
-        print("    `Y'          `Y'         `Y'         `Y'     |     `Y'           `Y'           `Y'             `Y'  ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 4 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file insertr"""
 
     if strikes == 5:
-        print(",d88b.d88b,  ,d88b.d88b, ,d88b.d88b, |,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b, ,d88b/ /d88b, ")
-        print("88888888888  88888888888 88888888888 |88888\ \88888 88888\ \88888  88888\ \88888  88888\ \88888 88888\ \88888 ")
-        print("`Y8888888Y'  `Y8888888Y' `Y8888888Y' |`Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y' `Y888/ /888Y' ")
-        print("  `Y888Y'      `Y888Y'     `Y888Y'   |  `Y8\ \8Y'     `Y8\ \8Y'     `Y8\ \8Y'       `Y8\ \8Y'     `Y8\ \8Y'  ")
-        print("    `Y'          `Y'         `Y'     |     `Y'           `Y'           `Y'             `Y'           `Y'    ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 3 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file insert"""
 
     if strikes == 6:
-        print(",d88b.d88b,  ,d88b.d88b, |,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ")
-        print("88888888888  88888888888 |88888\ \88888 88888\ \88888  88888\ \88888  88888\ \88888 88888\ \88888  88888\ \88888 ")
-        print("`Y8888888Y'  `Y8888888Y' |`Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y' ")
-        print("  `Y888Y'      `Y888Y'   |  `Y8\ \8Y'     `Y8\ \8Y'     `Y8\ \8Y'       `Y8\ \8Y'     `Y8\ \8Y'      `Y8\ \8Y' ")
-        print("    `Y'          `Y'     |     `Y'           `Y'           `Y'             `Y'           `Y'            `Y' ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 2 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file insert"""
 
     if strikes == 7:
-        print(",d88b.d88b, |,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b,  ")
-        print("88888888888 |88888\ \88888 88888\ \88888  88888\ \88888  88888\ \88888 88888\ \88888  88888\ \88888  88888\ \88888 ")
-        print("`Y8888888Y' |`Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y' ")
-        print("  `Y888Y'   |  `Y8\ \8Y'     `Y8\ \8Y'     `Y8\ \8Y'       `Y8\ \8Y'     `Y8\ \8Y'      `Y8\ \8Y'      `Y8\ \8Y'  ")
-        print("    `Y'     |     `Y'           `Y'           `Y'             `Y'           `Y'            `Y'            `Y'   ")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 1 out of " + str(limit) + " strikes left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file"""
+        
 
     if strikes == 8:
-        print("|,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b, ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b,  ,d88b/ /d88b, ")
-        print("|88888\ \88888 88888\ \88888  88888\ \88888  88888\ \88888 88888\ \88888  88888\ \88888  88888\ \88888  88888\ \88888 ")
-        print("|`Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y' `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y'  `Y888/ /888Y'")
-        print("|  `Y8\ \8Y'     `Y8\ \8Y'     `Y8\ \8Y'       `Y8\ \8Y'     `Y8\ \8Y'      `Y8\ \8Y'      `Y8\ \8Y'      `Y8\ \8Y' ")
-        print("|     `Y'           `Y'           `Y'             `Y'           `Y'            `Y'            `Y'            `Y'")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 0 out of " + str(limit) + " strikes left ( this is your last guess, make it good ) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~" + str(strikes) + " wrong guesses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("")
-        print("")
+        """file"""
 def play():
     strikes = 0
     
