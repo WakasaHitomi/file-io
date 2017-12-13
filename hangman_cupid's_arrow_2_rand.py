@@ -61,15 +61,13 @@ def get_puzzle():
     with open(file, 'r') as f:
         lines = f.read().splitlines()
 
-    print(lines)
 
     category_name = lines[0]
     puzzle = random.choice( lines[1:] )
 
     print(category_name)
-    print(puzzle)
 
-    puzzle = (puzzle)
+    return puzzle
     print("")
     print("")
     
@@ -99,27 +97,18 @@ def get_guess():
     print("")
 
 def show_credits():
-    print("")
-    print("")
-    print("Origial base for Hangman game...... J. Cooper")
-    print(" ")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print(" ")
-    print("      __   __       ")
-    print("     /  \./  \/\_                              ")
-    print("  __{^\_ _}_   )  }/^\                              ")
-    print(" /  /\_/^\._}_/  //  /                             ")                      
-    print("(  (__{(@)}\__}.//_/__A____A_______A________A________A_____A___A___A_____ ")
-    print(" \__/{/(_)\_}  )\\ \\---v-----V-----V---Y-----v----Y------v-----V-----v-- ")
-    print("   (   (__)_)_/  )\ \>    ")
-    print("    \__/     \__/\/\/ ")
-    print("       \__,--'     ")
-    print(" ")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print(" ")
-    print("Modified and Recreated by........WakasaHitomi")
-    print("")
-    print("")
+    path = "art"
+    
+    file_names = os.listdir(path)
+
+    file = path + "/" + file_names[hangman_show_credits]
+    print(file)
+
+    with open(file, 'r') as f:
+        lines = f.read().splitlines()
+
+    print(lines)
+
     exit()
 
 def display_board(solved, guesses):
@@ -155,19 +144,72 @@ def play_again():
 
 def mistakes(strikes, limit):
     if strikes == 0:
-        """file that opens"""
+            path = "art"
+    
+            file_names = os.listdir(path)
+
+            file = path + "/" + file_names[hangman_zero_strikes]
+            print(file)
+
+            with open(file, 'r') as f:
+                lines = f.read().splitlines()
+
+            print(lines)
         
     if strikes == 1:
-        """file insert"""
+            path = "art"
+    
+            file_names = os.listdir(path)
+
+            file = path + "/" + file_names[hangman_one_strike]
+            print(file)
+
+            with open(file, 'r') as f:
+                lines = f.read().splitlines()
+
+            print(lines)
+
 
     if strikes == 2:
-        """file insert"""
+            path = "art"
+    
+            file_names = os.listdir(path)
+
+            file = path + "/" + file_names[hangman_two_strikes]
+            print(file)
+
+            with open(file, 'r') as f:
+                lines = f.read().splitlines()
+
+            print(lines)
+ 
 
     if strikes == 3:
-        """file insert"""
+            path = "art"
+    
+            file_names = os.listdir(path)
+
+            file = path + "/" + file_names[hangman_three_strikes]
+            print(file)
+
+            with open(file, 'r') as f:
+                lines = f.read().splitlines()
+
+            print(lines)
+ 
 
     if strikes == 4:
-        """file insertr"""
+            path = "art"
+    
+            file_names = os.listdir(path)
+
+            file = path + "/" + file_names[hangman_four_strikes]
+            print(file)
+
+            with open(file, 'r') as f:
+                lines = f.read().splitlines()
+
+            print(lines)
 
     if strikes == 5:
         """file insert"""
