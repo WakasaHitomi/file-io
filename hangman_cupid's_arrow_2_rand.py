@@ -7,12 +7,42 @@ import random
 limit = 8
 
 def start_screen():
-    file = "art/hangman_splash_screen.txt"
-    with open(file, 'r') as f:
-        lines = f.read().splitlines()
-
-    print(lines)
-
+    print("oo      ")
+    print("   oo     OOOOOOOO:       OOOOOOOO!        ")
+    print("      oOOOO!!!!;;;;O    OO.......:;!O         ")
+    print("     'OOO!!!;;;;;;;;O  O.......:   ;!O       ")
+    print("     OOO!!!!;;::::::.OO........:    ;!O     ")
+    print("     OO!!!!;;:::::..............:   ;!O    ")
+    print("    OOO!!!;::::::..............:   ;!O    ")
+    print("      OO!!;;::::::.............:   ;!O     ")
+    print("      OO!;;::::::......oo.....::::!O       ")
+    print("        O!!;::::::........oo..:::O         ")
+    print("          !!!;:::::..........ooO           ")
+    print("              !!;:::::.......O   oo        ")
+    print("               ;;::::.....O        oo  ,o ")
+    print("                  :::..O              ooo")
+    print("                    ::.              oooo ")
+    print("                     :                    ")
+    print(" ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄  \   ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ")
+    print("▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌    ▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌ ")
+    print("▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌   ▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌ ")
+    print("▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌       ▐░▌   ▐░▌               ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌")
+    print("▐░▌          ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░▌       ▐░▌   ▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌   ▄   ▐░▌ ")
+    print("▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░▌       ▐░▌   ▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌  ▐░▌  ▐░▌ ")
+    print("▐░▌          ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░▌     ▐░▌       ▐░▌    ▀▀▀▀▀▀▀▀▀█░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀█░█▀▀ ▐░▌       ▐░▌▐░▌ ▐░▌░▌ ▐░▌")
+    print("▐░▌          ▐░▌       ▐░▌▐░▌               ▐░▌     ▐░▌       ▐░▌             ▐░▌     ▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌     ▐░▌  ▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌ ")
+    print("▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌           ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌    ▄▄▄▄▄▄▄▄▄█░▌     ▐░▌       ▐░▌▐░▌      ▐░▌ ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄█░▌▐░▌░▌   ▐░▐░▌")
+    print("▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░▌    ▐░░░░░░░░░░░▌     ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌")
+    print(" ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀            ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀      ▀▀▀▀▀▀▀▀▀▀▀       ▀         ▀  ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀       ▀▀  ")
+    print(" ")
+    print(" ")
+    print(" ")
+    print(" ")
+    print(" ")
+    print(" ")
+    print(" ")
+    print(" ")
+    print(" ")
 
 def get_puzzle():
     path = "data"
@@ -67,12 +97,7 @@ def get_guess():
     print("")
 
 def show_credits():
-    path = "art"
     
-    file_names = os.listdir(path)
-
-    file = path + "/" + file_names[hangman_show_credits]
-    print(file)
 
     with open(file, 'r') as f:
         lines = f.read().splitlines()
@@ -114,26 +139,14 @@ def play_again():
 
 def mistakes(strikes, limit):
     if strikes == 0:
-            path = "art"
-    
-            file_names = os.listdir(path)
-
-            file = path + "/" + file_names[hangman_zero_strikes]
-            print(file)
-
+            file = "art/hangman_zero_strikes.txt"
             with open(file, 'r') as f:
                 lines = f.read().splitlines()
 
             print(lines)
         
     if strikes == 1:
-            path = "art"
-    
-            file_names = os.listdir(path)
-
-            file = path + "/" + file_names[hangman_one_strike]
-            print(file)
-
+            
             with open(file, 'r') as f:
                 lines = f.read().splitlines()
 
