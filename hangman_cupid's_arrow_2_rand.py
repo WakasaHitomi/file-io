@@ -7,42 +7,12 @@ import random
 limit = 8
 
 def start_screen():
-    print("oo      ")
-    print("   oo     OOOOOOOO:       OOOOOOOO!        ")
-    print("      oOOOO!!!!;;;;O    OO.......:;!O         ")
-    print("     'OOO!!!;;;;;;;;O  O.......:   ;!O       ")
-    print("     OOO!!!!;;::::::.OO........:    ;!O     ")
-    print("     OO!!!!;;:::::..............:   ;!O    ")
-    print("    OOO!!!;::::::..............:   ;!O    ")
-    print("      OO!!;;::::::.............:   ;!O     ")
-    print("      OO!;;::::::......oo.....::::!O       ")
-    print("        O!!;::::::........oo..:::O         ")
-    print("          !!!;:::::..........ooO           ")
-    print("              !!;:::::.......O   oo        ")
-    print("               ;;::::.....O        oo  ,o ")
-    print("                  :::..O              ooo")
-    print("                    ::.              oooo ")
-    print("                     :                    ")
-    print(" ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄  \   ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ")
-    print("▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌    ▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌ ")
-    print("▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌   ▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌ ")
-    print("▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌       ▐░▌   ▐░▌               ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌")
-    print("▐░▌          ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░▌       ▐░▌   ▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌   ▄   ▐░▌ ")
-    print("▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░▌       ▐░▌   ▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌  ▐░▌  ▐░▌ ")
-    print("▐░▌          ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░▌     ▐░▌       ▐░▌    ▀▀▀▀▀▀▀▀▀█░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀█░█▀▀ ▐░▌       ▐░▌▐░▌ ▐░▌░▌ ▐░▌")
-    print("▐░▌          ▐░▌       ▐░▌▐░▌               ▐░▌     ▐░▌       ▐░▌             ▐░▌     ▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌     ▐░▌  ▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌ ")
-    print("▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌           ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌    ▄▄▄▄▄▄▄▄▄█░▌     ▐░▌       ▐░▌▐░▌      ▐░▌ ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄█░▌▐░▌░▌   ▐░▐░▌")
-    print("▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░▌    ▐░░░░░░░░░░░▌     ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌")
-    print(" ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀            ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀      ▀▀▀▀▀▀▀▀▀▀▀       ▀         ▀  ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀       ▀▀  ")
-    print(" ")
-    print(" ")
-    print(" ")
-    print(" ")
-    print(" ")
-    print(" ")
-    print(" ")
-    print(" ")
-    print(" ")
+    file = "art/hangman_splash_screen.txt"
+    with open(file, 'r') as f:
+        lines = f.read().splitlines()
+
+    print(lines)
+
 
 def get_puzzle():
     path = "data"
@@ -97,8 +67,7 @@ def get_guess():
     print("")
 
 def show_credits():
-    
-
+    file = "art/hangman_show_credits.txt"
     with open(file, 'r') as f:
         lines = f.read().splitlines()
 
@@ -139,73 +108,72 @@ def play_again():
 
 def mistakes(strikes, limit):
     if strikes == 0:
-            file = "art/hangman_zero_strikes.txt"
-            with open(file, 'r') as f:
-                lines = f.read().splitlines()
+        file = "art/hangman_zero_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
 
-            print(lines)
+        print(lines)
         
     if strikes == 1:
-            
-            with open(file, 'r') as f:
-                lines = f.read().splitlines()
+        file = "art/hangman_one_strike.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
 
-            print(lines)
+        print(lines)
 
 
     if strikes == 2:
-            path = "art"
-    
-            file_names = os.listdir(path)
+        file = "art/hangman_two_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
 
-            file = path + "/" + file_names[hangman_two_strikes]
-            print(file)
-
-            with open(file, 'r') as f:
-                lines = f.read().splitlines()
-
-            print(lines)
+        print(lines)
  
 
     if strikes == 3:
-            path = "art"
-    
-            file_names = os.listdir(path)
+        file = "art/hangman_three_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
 
-            file = path + "/" + file_names[hangman_three_strikes]
-            print(file)
-
-            with open(file, 'r') as f:
-                lines = f.read().splitlines()
-
+        print(lines)
             print(lines)
  
 
     if strikes == 4:
-            path = "art"
-    
-            file_names = os.listdir(path)
+        file = "art/hangman_four_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
 
-            file = path + "/" + file_names[hangman_four_strikes]
-            print(file)
-
-            with open(file, 'r') as f:
-                lines = f.read().splitlines()
-
-            print(lines)
+        print(lines)
 
     if strikes == 5:
-        """file insert"""
+        file = "art/hangman_five_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
 
+        print(lines)
     if strikes == 6:
-        """file insert"""
+        file = "art/hangman_six_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
+
+        print(lines)
 
     if strikes == 7:
-        """file"""
+        file = "art/hangman_seven_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
+
+        print(lines)
         
 
     if strikes == 8:
-        """file"""
+         file = "art/hangman_eight_strikes.txt"
+        with open(file, 'r') as f:
+            lines = f.read().splitlines()
+
+        print(lines)
+        
 def play():
     strikes = 0
     
