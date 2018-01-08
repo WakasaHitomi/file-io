@@ -1,0 +1,11 @@
+School Supplies
+scissors
+tape
+glue
+pen
+pencil
+gluestick
+eraser
+paper
+crayons
+notebook
